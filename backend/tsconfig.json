@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+      "target": "ES2020",
+      "module": "NodeNext",
+      "moduleResolution": "NodeNext",
+      "strict": true,
+      "outDir": "dist",
+      "allowJs": true,
+      "sourceMap": true,
+      "lib": ["dom", "dom.iterable", "esnext"],
+      "declaration": true,
+      "esModuleInterop": true
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules"]
+  }

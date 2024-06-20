@@ -2,11 +2,19 @@ FROM node:16-alpine AS builder
 
 WORKDIR /app
 COPY package*.json ./
+COPY tsconfig.* ./
+COPY vite.config.* ./
+COPY index.html ./
+copy /src ./src
+
 RUN npm install --only=dev
+# RUN npm run build
+RUN npx tsc
+RUN npx vite build
 
 FROM nginx:alpine
 
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]

@@ -2,39 +2,42 @@ version: '3.9'
 
 services:
   postgres:
-    image: postgres:16
+    image: postgres
     restart: always
     shm_size: 128mb
     container_name: postgres_db
     ports:
       - '5432:5432'
+    # env_file: ".env"
     environment:
-      - .env
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
     volumes:
       - postgres_data:/var/lib/postgresql/data  # Persistent storage for database
 
-  adminer:
-    image: adminer
-    restart: always
-    ports:
-      - 8080:8080
+  # adminer:
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
   
-  backend:
-    build: ./backend
-    depends_on:
-      - postgres
-    ports:
-      - "8000:8000"  # Change port numbers if needed
-    environment:
-      - .env
-    volumes:
-      - ./backend/src:/app/src
+  # backend:
+  #   build: ./backend
+  #   # depends_on:
+  #   #   - postgres
+  #   ports:
+  #     - "8000:8000"  # Change port numbers if needed
+  #   env_file: ".env"
+  #   volumes:
+  #     - ./backend/src:/app/src
 
-  frontend:
-    build: ./frontend
-    depends_on:
-      - backend
-    ports: 3000:80
+  # frontend:
+  #   build: ./frontend
+  #   depends_on:
+  #     - backend
+  #   ports:
+  #     - 3000:80
 
 volumes:
   postgres_data: {}
