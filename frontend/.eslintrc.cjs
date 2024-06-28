@@ -35,9 +35,9 @@ module.exports = {
             'code': 120,
             'tabWidth': 4
         }
-    ], // Adjust line length and tab width if needed
-    'no-param-reassign': 'off', // Use with caution
-    'no-underscore-dangle': 'off', // Consider potential naming conflicts
+    ],
+    'no-param-reassign': 'off',
+    'no-underscore-dangle': 'off',
     'react/jsx-filename-extension': [1, { 'extensions': ['.tsx'] }],
     'import/no-unresolved': 'off',
     'consistent-return': 'off', // Consider enabling for better code clarity
@@ -48,8 +48,8 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off', // Consider for better prop management
     'jsx-a11y/label-has-associated-control': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    'no-prototype-builtins': 'off', // Use with caution
-    'no-nested-ternary': 'off',
-    'prettier/prettier': [2, { 'endOfLine': 'auto' }] // Set prettier rule severity to error
+    'no-prototype-builtins': 'off',
+    'no-nested-ternary': 'on',
+    'prettier/prettier': [2, { 'endOfLine': 'auto' }]
   },
 }

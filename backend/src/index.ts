@@ -20,11 +20,11 @@ const app = express();
 // Route to check database connection
 app.get('/check-database', async (req, res) => {
   try {
-    let message = await testConnection(dataSource);
-    res.status(200).json({message: message});
+    let message = await testConnection(dataSource)
+    res.status(200).json( {message: message} )
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: 'Error connecting to database' });
+    res.status(500).json({ message: 'Error connecting to database' })
   }
 });
 
