@@ -46,8 +46,9 @@ export default [
   {
     files: ['src/**/*.ts'],
     rules: {
-      // semi: 'error',
-      // 'space-in-parens': 'error',
+      'semi': ["error", "never"],
+      '@typescript-eslint/semi': ["error", "never"],
+      'space-in-parens': 'error',
     }
   }
 ];
