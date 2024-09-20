@@ -21,7 +21,7 @@ const MainNavBar: FC = () => {
     }, []);
 
     const navList = (
-        <ul className="mt-2 mb-4 w-full flex flex-col gap-2 sm:w-full sm:mb-0 sm:mt-0 sm:flex-row sm:justify-around">
+        <ul className="w-full flex flex-col sm:w-full sm:m-0 sm:flex-row sm:justify-around">
             <Typography
                 as="li"
                 variant="small"
@@ -73,8 +73,8 @@ const MainNavBar: FC = () => {
     );
 
     return (
-        <Navbar className="fixed bottom-0 max-w-screen-xl rounded-none sm:px-0 lg:px-0 lg:py-4">
-            <div className="w-full flex text-blue-gray-900 border-t-2">
+        <Navbar className="fixed bottom-0 max-w-screen-xl rounded-none p-0 mx-auto items-center">
+            <div className="w-full flex text-blue-gray-900 border-t-2 pt-2">
                 <Typography
                     as="a"
                     href="#"

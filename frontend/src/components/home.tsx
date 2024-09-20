@@ -7,7 +7,9 @@ const Home = () => {
         <div className="main mb-12">
           <Treino/>
         </div>
-        <MainNavBar />
+        <div className='w-full max-w-screen-xl mx-auto'>
+          <MainNavBar />
+        </div>
       </>  
     )
 }
